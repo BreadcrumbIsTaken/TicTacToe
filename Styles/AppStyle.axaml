@@ -1,0 +1,49 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<Styles.Resources>
+		<FontFamily x:Key="Montserrat">/Assets/Fonts/Montserrat-ExtraBold.ttf#Montserrat</FontFamily>
+	</Styles.Resources>
+	<Style Selector="TextBlock.h1">
+		<Setter Property="FontSize" Value="28" />
+		<Setter Property="FontFamily" Value="{StaticResource Montserrat}" />
+	</Style>
+	<Style Selector="TextBlock.x">
+		<Setter Property="FontFamily" Value="{StaticResource Montserrat}" />
+		<Setter Property="Foreground" Value="Firebrick" />
+	</Style>
+	<Style Selector="TextBlock.o">
+		<Setter Property="FontFamily" Value="{StaticResource Montserrat}" />
+		<Setter Property="Foreground" Value="CornflowerBlue" />
+	</Style>
+	<Style Selector="Border.TicTacToeBox">
+		<Setter Property="Background" Value="WhiteSmoke" />
+		<Setter Property="BorderThickness" Value="5" />
+		<Setter Property="BorderBrush" Value="Gray"/>
+		<Setter Property="CornerRadius" Value="10" />
+	</Style>
+	<Style Selector="Border.TicTacToeBox:pointerover">
+		<Setter Property="Background" Value="Lavender" />
+	</Style>
+	<Style Selector="Button.RestartButton">
+		<Setter Property="Background" Value="Lavender" />
+		<Setter Property="FontFamily" Value="{StaticResource Montserrat}" />
+		<Setter Property="CornerRadius" Value="0" />
+	</Style>
+	<Style Selector="Button.RestartButton:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+		<Setter Property="Background" Value="#CFD0F2" />
+	</Style>
+	<Style Selector="Button.RestartButton:pressed /template/ ContentPresenter#PART_ContentPresenter">
+		<Setter Property="Background" Value="#CFD0F2" />
+	</Style>
+	<Design.PreviewWith>
+		<Border Padding="20">
+			<WrapPanel>
+				<TextBlock Classes="h1" Margin="5">h1</TextBlock>
+				<Border Background="Lavender">
+					<TextBlock Classes="x" Margin="5">x</TextBlock>
+				</Border>
+				<Button Classes="RestartButton">Test</Button>
+			</WrapPanel>
+		</Border>
+	</Design.PreviewWith>
+</Styles>

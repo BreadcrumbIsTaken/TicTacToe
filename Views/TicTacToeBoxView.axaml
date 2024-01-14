@@ -1,0 +1,33 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:conv="using:TicTacToe.Converter"
+			 xmlns:vm="clr-namespace:TicTacToe.ViewModels"
+			 xmlns:local="using:TicTacToe"
+			 mc:Ignorable="d" d:DesignWidth="100" d:DesignHeight="100"
+             x:Class="TicTacToe.Views.TicTacToeBoxView"
+			 x:DataType="vm:TicTacToeBoxViewModel"
+			 Background="Transparent"
+			 Width="100" Height="100">
+	<UserControl.DataContext>
+		<vm:TicTacToeBoxViewModel />
+	</UserControl.DataContext>
+	<Panel>
+		<Border Classes="TicTacToeBox" PointerPressed="HandleBoxPressed">
+			<Panel x:Name="BoxPanel" >
+				<TextBlock x:Name="test" HorizontalAlignment="Center"
+							VerticalAlignment="Center"
+							Classes="x"
+							FontSize="50"
+							IsVisible="{Binding BoxType, Converter={x:Static conv:BoxTypeConverters.IsTypeXConverter}}">X</TextBlock>
+
+				<TextBlock HorizontalAlignment="Center"
+							VerticalAlignment="Center"
+							Classes="o"
+							FontSize="70"
+							IsVisible="{Binding BoxType, Converter={x:Static conv:BoxTypeConverters.IsTypeOConverter}}">O</TextBlock>
+			</Panel>
+		</Border>
+	</Panel>
+</UserControl>
