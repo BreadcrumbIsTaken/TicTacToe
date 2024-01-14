@@ -6,7 +6,7 @@ namespace TicTacToe.ViewModels;
 
 public class GameViewModel : ViewModelBase
 {
-    public static Turn CurrentTurn { get; private set; } = Turn.X;
+    public static Turn CurrentTurn { get; set; } = Turn.X;
     public ICommand ResetGridCommand { get; }
 
     private bool _isGameOver = false;

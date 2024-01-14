@@ -118,5 +118,7 @@ public partial class TicTacToeBoxView : UserControl
     {
         GameViewModel.GameOverText = winningTurn == null ? "Game Over!" : $"{winningTurn} Wins!";
         GameViewModel.IsGameOver = true;
+        // Reset turn order (X goes first)
+        GameViewModel.CurrentTurn = Turn.X;
     }
 }
